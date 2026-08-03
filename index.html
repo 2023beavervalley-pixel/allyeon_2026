@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Allyeon — 함께 기대도 되는 곳</title>
-<meta name="description" content="Allyeon(알리연)은 AI와 스타트업 업계에서 일하는 여성들이 서로 연결되고, 성장하고, 동료가 되는 커뮤니티입니다." />
-<meta property="og:title" content="Allyeon — 함께 기대도 되는 곳" />
-<meta property="og:description" content="AI · 스타트업 업계 여성들이 서로를 알아보고, 연결하고, 지지하고, 기회를 넓히는 곳" />
+<title>Allyeon · 알리연 — 회사 밖 동료를 만나는 곳</title>
+<meta name="description" content="AI · 스타트업 업계에서 일하는 여성들의 커뮤니티. 온라인 소모임(멘토링 · 스터디)과 분기별 오프라인 모임으로 회사 밖 동료를 만납니다. 2017년 스여일삶에서 시작해 2026년 알리연으로 이어집니다." />
+<meta property="og:title" content="Allyeon · 알리연 — 회사 밖 동료를 만나는 곳" />
+<meta property="og:description" content="AI · 스타트업 업계 여성들이 회사 밖에서 동료를 만나는 커뮤니티. 시즌제 온라인 소모임과 오프라인 모임을 운영합니다." />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="ko_KR" />
 <meta property="og:site_name" content="Allyeon" />
@@ -16,6 +16,13 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="Allyeon" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Allyeon · 알리연 — 회사 밖 동료를 만나는 곳" />
+<meta name="twitter:description" content="AI · 스타트업 업계 여성들이 회사 밖에서 동료를 만나는 커뮤니티. 시즌제 온라인 소모임과 오프라인 모임을 운영합니다." />
+<meta name="twitter:image" content="https://2023beavervalley-pixel.github.io/allyeon_2026/og-image.png" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<meta name="author" content="Allyeon (알리연)" />
+<meta name="keywords" content="알리연, Allyeon, 여성 커뮤니티, 스타트업 여성, AI 커뮤니티, 스여일삶, 여성 네트워킹, 커리어 커뮤니티, 온라인 소모임, 멘토링" />
+<meta name="theme-color" content="#4F3D56" />
 <link rel="canonical" href="https://2023beavervalley-pixel.github.io/allyeon_2026/" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -82,6 +89,25 @@
   }
   .btn:hover, .btn:focus-visible { background: #3d2f43; }
   .btn:focus-visible, a:focus-visible { outline: 2px solid var(--plum); outline-offset: 3px; }
+
+  /* ---------- 모바일 메뉴 ---------- */
+  .nav-toggle {
+    display: none;
+    width: 40px; height: 40px; margin-right: -8px;
+    align-items: center; justify-content: center;
+    background: none; border: 0; padding: 0; cursor: pointer;
+    color: var(--navy); border-radius: 4px;
+  }
+  .nav-toggle span { display: block; width: 20px; height: 1.5px; background: currentColor; position: relative; transition: background 0.2s; }
+  .nav-toggle span::before, .nav-toggle span::after {
+    content: ''; position: absolute; left: 0; width: 20px; height: 1.5px;
+    background: currentColor; transition: transform 0.25s, top 0.25s;
+  }
+  .nav-toggle span::before { top: -6px; }
+  .nav-toggle span::after  { top: 6px; }
+  .nav-toggle[aria-expanded="true"] span { background: transparent; }
+  .nav-toggle[aria-expanded="true"] span::before { top: 0; transform: rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] span::after  { top: 0; transform: rotate(-45deg); }
 
   /* ---------- Hero ---------- */
   .hero {
@@ -343,7 +369,26 @@
   /* ---------- Responsive ---------- */
   @media (max-width: 860px) {
     section { padding: 80px 0; }
-    .nav-links a:not(.btn) { display: none; }
+    .nav-toggle { display: flex; }
+    .nav-links {
+      position: absolute; top: 100%; left: 0; right: 0;
+      flex-direction: column; align-items: stretch; gap: 0;
+      background: rgba(253, 253, 254, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--hairline);
+      padding: 6px 0 16px;
+      display: none;
+      max-height: calc(100vh - 64px); overflow-y: auto;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a {
+      padding: 15px 24px; font-size: 0.95rem; opacity: 1;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .nav-links a.btn {
+      margin: 16px 24px 0; padding: 13px 22px;
+      text-align: center; border-bottom: 0;
+    }
     .story-grid, .founder-grid { grid-template-columns: 1fr; gap: 40px; }
     .pv-grid { grid-template-columns: 1fr; gap: 48px; }
     .founder-photo { max-width: 320px; }
@@ -772,13 +817,167 @@
   .nav-links a.nav-tab.active-tab { opacity: 1; font-weight: 600; color: var(--plum); }
 
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "EducationalOrganization"],
+      "@id": "https://2023beavervalley-pixel.github.io/allyeon_2026/#organization",
+      "name": "Allyeon",
+      "alternateName": ["알리연", "Allyeon 알리연", "스여일삶"],
+      "url": "https://2023beavervalley-pixel.github.io/allyeon_2026/",
+      "logo": "https://2023beavervalley-pixel.github.io/allyeon_2026/og-image.png",
+      "image": "https://2023beavervalley-pixel.github.io/allyeon_2026/og-image.png",
+      "description": "AI · 스타트업 업계에서 일하는 여성들의 커뮤니티. 온라인 소모임(멘토링 · 스터디)과 분기별 오프라인 모임으로 회사 밖 동료를 만납니다. 2017년 스여일삶에서 시작해 2026년 알리연으로 이어집니다.",
+      "foundingDate": "2017",
+      "areaServed": { "@type": "Country", "name": "대한민국" },
+      "knowsLanguage": "ko",
+      "knowsAbout": ["여성 커리어", "스타트업", "AI", "커뮤니티 운영", "멘토링", "네트워킹"],
+      "sameAs": ["https://www.linkedin.com/company/142875242/"],
+      "founder": {
+        "@type": "Person",
+        "name": "김지영",
+        "jobTitle": "Allyeon Community Founder",
+        "sameAs": ["https://www.linkedin.com/in/jyking0907/"]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://2023beavervalley-pixel.github.io/allyeon_2026/#website",
+      "url": "https://2023beavervalley-pixel.github.io/allyeon_2026/",
+      "name": "Allyeon · 알리연 — 회사 밖 동료를 만나는 곳",
+      "description": "AI · 스타트업 업계에서 일하는 여성들의 커뮤니티. 온라인 소모임(멘토링 · 스터디)과 분기별 오프라인 모임으로 회사 밖 동료를 만납니다. 2017년 스여일삶에서 시작해 2026년 알리연으로 이어집니다.",
+      "inLanguage": "ko-KR",
+      "publisher": { "@id": "https://2023beavervalley-pixel.github.io/allyeon_2026/#organization" }
+    },
+    {
+      "@type": "ItemList",
+      "name": "알리연 2026 시즌 1 온라인 소모임",
+      "description": "AI · 스타트업 업계 여성들을 위한 시즌제 온라인 소모임. 2026년 8월 9일까지 모집합니다.",
+      "numberOfItems": 5,
+      "itemListElement": [
+      {
+        "@type": ["Event", "EducationEvent"],
+        "position": 1,
+        "name": "내 이력서, 왜 서류에서 떨어질까?",
+        "description": "채용 기준 진단부터 이력서 첨삭, 지원 전략 수립까지 3회에 걸쳐 진행하는 이직 준비 멘토링.",
+        "startDate": "2026-08-20T20:00:00+09:00",
+        "endDate": "2026-10-15T21:30:00+09:00",
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "inLanguage": "ko-KR",
+        "location": { "@type": "VirtualLocation", "url": "https://meet.google.com/" },
+        "organizer": { "@id": "https://2023beavervalley-pixel.github.io/allyeon_2026/#organization" },
+        "performer": { "@type": "Person", "name": "이윤서" },
+        "offers": {
+          "@type": "Offer",
+          "price": "50000", "priceCurrency": "KRW",
+          "availability": "https://schema.org/LimitedAvailability",
+          "validThrough": "2026-08-09T23:59:00+09:00",
+          "url": "https://docs.google.com/forms/d/e/1FAIpQLSdneVcavYhygypEZA3eyi6VkqyB3AG-BIf0G05ymFCc--DijA/viewform"
+        }
+      },
+      {
+        "@type": ["Event", "EducationEvent"],
+        "position": 2,
+        "name": "B2B 마케팅 실전 클리닉",
+        "description": "7~10년 차 B2B 마케팅 실무자가 각자의 업무 고민을 꺼내 함께 진단하고 실행 결과까지 리뷰하는 클리닉.",
+        "startDate": "2026-08-18T21:00:00+09:00",
+        "endDate": "2026-10-20T22:30:00+09:00",
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "inLanguage": "ko-KR",
+        "location": { "@type": "VirtualLocation", "url": "https://meet.google.com/" },
+        "organizer": { "@id": "https://2023beavervalley-pixel.github.io/allyeon_2026/#organization" },
+        "performer": { "@type": "Person", "name": "김나래" },
+        "offers": {
+          "@type": "Offer",
+          "price": "90000", "priceCurrency": "KRW",
+          "availability": "https://schema.org/LimitedAvailability",
+          "validThrough": "2026-08-09T23:59:00+09:00",
+          "url": "https://docs.google.com/forms/d/e/1FAIpQLScsty5TEr2g4flypgBXjV7cb29VTKvaAmy141xqNgdAON_WcA/viewform"
+        }
+      },
+      {
+        "@type": ["Event", "EducationEvent"],
+        "position": 3,
+        "name": "홍보가 궁금한 사람들의 90일 PR 수업",
+        "description": "홍보를 처음 맡은 실무자와 작은 회사 대표를 위한 90일 PR 실행 스터디.",
+        "startDate": "2026-08-13T20:00:00+09:00",
+        "endDate": "2026-10-08T21:30:00+09:00",
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "inLanguage": "ko-KR",
+        "location": { "@type": "VirtualLocation", "url": "https://meet.google.com/" },
+        "organizer": { "@id": "https://2023beavervalley-pixel.github.io/allyeon_2026/#organization" },
+        "performer": { "@type": "Person", "name": "이정임" },
+        "offers": {
+          "@type": "Offer",
+          "price": "50000", "priceCurrency": "KRW",
+          "availability": "https://schema.org/LimitedAvailability",
+          "validThrough": "2026-08-09T23:59:00+09:00",
+          "url": "https://docs.google.com/forms/d/e/1FAIpQLSf8NSPaq1dn9Lq6RNBmcbKtpAi-Mi19M-Wgz2Cbo-kaebNTDw/viewform"
+        }
+      },
+      {
+        "@type": ["Event", "EducationEvent"],
+        "position": 4,
+        "name": "휴먼센스 커리어 클럽",
+        "description": "AI 시대에 대체되지 않을 인간 고유의 경쟁력을 4회 워크숍으로 함께 탐구하는 스터디.",
+        "startDate": "2026-08-11T19:30:00+09:00",
+        "endDate": "2026-10-13T21:30:00+09:00",
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "inLanguage": "ko-KR",
+        "location": { "@type": "VirtualLocation", "url": "https://meet.google.com/" },
+        "organizer": { "@id": "https://2023beavervalley-pixel.github.io/allyeon_2026/#organization" },
+        "performer": { "@type": "Person", "name": "이은이" },
+        "offers": {
+          "@type": "Offer",
+          "price": "100000", "priceCurrency": "KRW",
+          "availability": "https://schema.org/LimitedAvailability",
+          "validThrough": "2026-08-09T23:59:00+09:00",
+          "url": "https://docs.google.com/forms/d/e/1FAIpQLSeh7EdOfB0o9RG0djKcG9fI8N0ptokypn-TPzSTbyg16ZA33Q/viewform"
+        }
+      },
+      {
+        "@type": ["Event", "EducationEvent"],
+        "position": 5,
+        "name": "『아티스트 웨이』로 시작하는 번아웃 회복",
+        "description": "『아티스트 웨이』 12주 과정을 함께 완주하며 번아웃에서 회복하는 리추얼 모임.",
+        "startDate": "2026-08-12T21:00:00+09:00",
+        "endDate": "2026-10-21T22:30:00+09:00",
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "inLanguage": "ko-KR",
+        "location": { "@type": "VirtualLocation", "url": "https://meet.google.com/" },
+        "organizer": { "@id": "https://2023beavervalley-pixel.github.io/allyeon_2026/#organization" },
+        "performer": { "@type": "Person", "name": "박경선" },
+        "offers": {
+          "@type": "Offer",
+          "price": "50000", "priceCurrency": "KRW",
+          "availability": "https://schema.org/LimitedAvailability",
+          "validThrough": "2026-08-09T23:59:00+09:00",
+          "url": "https://docs.google.com/forms/d/e/1FAIpQLSf-_khUqovUcAGE6i2LBLyMqFZqiAoS_AEzjCXiZHmhWC61Ew/viewform"
+        }
+      }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
 <header>
   <nav>
     <a class="wordmark" href="#top" data-page="home" id="wordmark-link">Allyeon</a>
-    <div class="nav-links">
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="메뉴 열기">
+      <span></span>
+    </button>
+    <div class="nav-links" id="nav-links">
       <a href="#story"   data-page="home" data-anchor="story"    class="nav-tab nav-anchor">Story</a>
       <a href="#promises" data-page="home" data-anchor="promises" class="nav-tab nav-anchor">Why Allyeon</a>
       <a href="#moments"  data-page="home" data-anchor="moments"  class="nav-tab nav-anchor">Moments</a>
@@ -1614,7 +1813,7 @@
             <div class="mentor-avatar"><img src="data:image/jpeg;base64,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" alt="이은이 프로필 사진" /></div>
             <div class="mentor-info">
               <p class="mentor-name">이은이 <span class="mentor-years">경력 13년</span></p>
-              <p class="mentor-bg">FIND NORTH STAR 스토리텔러 · 前 토스 컬처 에반젤리스트</p>
+              <p class="mentor-bg">FIND NORTH STAR 스토리텔러 · 前 교보문고 SNS 마케팅 리드</p>
               <a class="mentor-linkedin" href="https://www.linkedin.com/in/zaceun/" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>LinkedIn</a>
             </div>
           </div>
@@ -1813,6 +2012,24 @@
 </div>
 
 <script>
+  /* ════════════════════════════════════
+     MOBILE MENU
+  ════════════════════════════════════ */
+  (function () {
+    const btn = document.getElementById('nav-toggle');
+    const menu = document.getElementById('nav-links');
+    if (!btn || !menu) return;
+    const close = () => { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-label', '메뉴 열기'); };
+    btn.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+    });
+    menu.addEventListener('click', e => { if (e.target.closest('a')) close(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+    window.addEventListener('resize', () => { if (window.innerWidth > 860) close(); });
+  })();
+
   /* ════════════════════════════════════
      SPA PAGE SWITCHER
   ════════════════════════════════════ */
