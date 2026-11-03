@@ -125,6 +125,8 @@ a{color:inherit}
 .btn-outline{border-color:var(--plum);color:var(--plum)}
 .btn-outline:hover{background:var(--plum);color:var(--white)}
 .btn[aria-disabled="true"]{opacity:.55;cursor:default;pointer-events:none}
+.sponsor-meta{margin-top:14px;font-size:.88rem;color:var(--muted);line-height:1.7}
+.sponsor-meta a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 .link-note{font-size:.85rem;color:var(--muted);margin-top:10px}
 
 @media (max-width:920px){
@@ -655,6 +657,7 @@ a{color:inherit}
       <div>
         <a class="btn btn-outline" data-link="sponsor" href="#">후원 문의하기</a>
         <p class="link-note" data-note="sponsor" hidden>후원 문의 창구를 준비하고 있어요.</p>
+        <p class="sponsor-meta">후원 접수 마감 11월 23일(월)<br/>메일 문의 <a href="mailto:hello@allyeon.org">hello@allyeon.org</a></p>
       </div>
     </div>
   </div>
@@ -716,7 +719,7 @@ a{color:inherit}
 const LINKS = {
   notify: "",   // 사전 알림 신청 구글폼
   host: "https://forms.gle/5gadHg9QgMspvXgy6",     // 주니어 진행자 지원서 구글폼
-  sponsor: ""   // 후원 문의 구글폼 또는 mailto:주소
+  sponsor: "https://forms.gle/QguzeRV7vCwrqwxR6"   // 후원 문의 구글폼
 };
 document.querySelectorAll("[data-link]").forEach(function(a){
   const url = LINKS[a.dataset.link];
