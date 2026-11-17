@@ -303,6 +303,25 @@ a{color:inherit}
 .footer-links{display:flex;gap:22px;flex-wrap:wrap}
 .footer-links a{text-decoration:none}
 .footer-links a:hover{color:var(--white)}
+
+/* 참가 신청 CTA */
+.nav-links{margin-left:auto}
+.nav-cta{margin-left:24px;display:inline-flex;align-items:center;height:38px;padding:0 18px;border-radius:999px;background:var(--lilac);color:var(--navy);font-size:.9rem;font-weight:700;text-decoration:none;white-space:nowrap;transition:background .2s}
+.nav-cta:hover{background:var(--white)}
+.cta-strip{margin-top:40px;display:flex;align-items:center;justify-content:space-between;gap:16px 24px;flex-wrap:wrap;padding:24px 28px;border-radius:14px;background:var(--navy);color:var(--fog)}
+.cta-strip p{font-size:1.05rem;font-weight:600;color:var(--white);line-height:1.5}
+.cta-strip p small{display:block;font-size:.9rem;font-weight:400;color:rgba(233,231,236,.75);margin-top:2px}
+.footer-cta{margin-top:20px}
+.float-cta{display:none}
+@media (max-width:920px){
+  .nav-cta{margin-left:auto;margin-right:10px;height:34px;padding:0 14px;font-size:.85rem}
+  .nav-toggle{order:3}
+  .cta-strip{padding:22px 22px}
+  .cta-strip .btn{width:100%}
+  .float-cta{display:flex;position:fixed;left:16px;right:16px;bottom:16px;z-index:60;justify-content:center;box-shadow:0 8px 24px rgba(31,40,56,.28);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .25s,transform .25s}
+  .float-cta.show{opacity:1;transform:none;pointer-events:auto}
+  .footer{padding-bottom:96px}
+}
 </style>
 </head>
 <body>
@@ -321,6 +340,7 @@ a{color:inherit}
       <li><a href="#sponsor">후원</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
+    <a class="nav-cta" data-link="apply" href="#join">참가 신청</a>
   </div>
 </nav>
 
@@ -347,7 +367,7 @@ a{color:inherit}
         <span class="fact">100명</span>
       </div>
       <div class="hero-ctas">
-        <a class="btn btn-primary" data-link="notify" data-fallback="#join" href="#join">사전 알림 신청</a>
+        <a class="btn btn-primary" data-link="apply" data-fallback="#join" href="#join">참가 신청</a>
         <a class="btn btn-ghost" data-link="host" data-fallback="#host" href="#host">진행자 지원하기</a>
         <a class="btn btn-ghost" data-link="sponsor" data-fallback="#sponsor" href="#sponsor">후원 문의</a>
       </div>
@@ -433,6 +453,10 @@ a{color:inherit}
         </ul>
       </article>
     </div>
+    <div class="cta-strip">
+      <p>두 개의 무대, 객석에서 함께해요<small>100명 선착순으로 마감될 수 있어요</small></p>
+      <a class="btn btn-primary" data-link="apply" href="#join">참가 신청</a>
+    </div>
   </div>
 </section>
 
@@ -517,6 +541,10 @@ a{color:inherit}
       <div class="tt-total"><span>합계</span><span>오후 한나절, 올해의 정산 완료</span></div>
     </div>
     <p class="tt-note">세부 시간은 연사 확정에 따라 조금 달라질 수 있어요.</p>
+    <div class="cta-strip">
+      <p>12월 12일 토요일 오후, 올해의 정산을 함께해요<small>참가비 30,000원 · 13:30 입장</small></p>
+      <a class="btn btn-primary" data-link="apply" href="#join">참가 신청</a>
+    </div>
   </div>
 </section>
 
@@ -593,14 +621,13 @@ a{color:inherit}
         <li><span class="k">장소</span><span class="v">서울 역삼 인근<small>정확한 위치는 참석 확정자분들께 개별 안내해요</small></span></li>
         <li><span class="k">규모</span><span class="v">100명</span></li>
         <li><span class="k">참가비</span><span class="v">30,000원</span></li>
-        <li><span class="k">신청</span><span class="v">11월 중 오픈 예정<small>선착순으로 마감될 수 있어요</small></span></li>
+        <li><span class="k">신청</span><span class="v">지금 신청받고 있어요<small>선착순으로 마감될 수 있어요</small></span></li>
       </ul>
       <div class="notify">
-        <h3>신청이 열리면 가장 먼저 알려드릴게요</h3>
-        <p>연사 라인업이 공개되고 신청이 열리는 날, 사전 알림을 신청하신 분께 먼저 소식을 전해드려요.</p>
-        <a class="btn btn-primary" data-link="notify" href="#">사전 알림 신청</a>
-        <p class="link-note" data-note="notify" hidden style="color:rgba(233,231,236,.7)">사전 알림 신청 링크를 준비하고 있어요.</p>
-        <div class="stamp square" aria-hidden="true">접수 예정</div>
+        <h3>참가 신청을 받고 있어요</h3>
+        <p>100명 선착순으로 마감될 수 있어요. 신청서를 보내 주시면 참석 확정과 장소 안내를 개별로 전해드려요.</p>
+        <a class="btn btn-primary" data-link="apply" href="#">참가 신청하기</a>
+        <div class="stamp square" aria-hidden="true">접수 중</div>
       </div>
     </div>
   </div>
@@ -656,7 +683,7 @@ a{color:inherit}
       <div>
         <a class="btn btn-outline" data-link="sponsor" href="#">후원 문의하기</a>
         <p class="link-note" data-note="sponsor" hidden>후원 문의 창구를 준비하고 있어요.</p>
-        <p class="sponsor-meta">후원 접수 마감 11월 23일(월)<br/>메일 문의 <a href="mailto:hello@allyeon.org">hello@allyeon.org</a></p>
+        <p class="sponsor-meta">후원 접수 마감 11월 30일(월)<br/>메일 문의 <a href="mailto:hello@allyeon.org">hello@allyeon.org</a></p>
       </div>
     </div>
   </div>
@@ -701,7 +728,7 @@ a{color:inherit}
 
 <footer class="footer">
   <div class="wrap">
-    <div class="footer-closing"><b>See you on stage</b>2026년 알리연 정산은 12월 12일에 마감됩니다</div>
+    <div class="footer-closing"><b>See you on stage</b>2026년 알리연 정산은 12월 12일에 마감됩니다<div class="footer-cta"><a class="btn btn-primary" data-link="apply" href="#join">참가 신청</a></div></div>
     <div class="footer-inner">
       <a class="brand" href="https://allyeon.org/">Allyeon</a>
       <div class="footer-links">
@@ -713,10 +740,12 @@ a{color:inherit}
   </div>
 </footer>
 
+<a class="btn btn-primary float-cta" data-link="apply" href="#join" aria-hidden="true" tabindex="-1">참가 신청하기</a>
+
 <script>
 /* 폼 링크가 준비되면 여기만 채우면 페이지 전체 버튼이 연결돼요 */
 const LINKS = {
-  notify: "",   // 사전 알림 신청 구글폼
+  apply: "https://forms.gle/z3A3B9m6SsJRHnJe9",   // 참가 신청 구글폼
   host: "https://forms.gle/5gadHg9QgMspvXgy6",     // 주니어 진행자 지원서 구글폼
   sponsor: "https://forms.gle/QguzeRV7vCwrqwxR6"   // 후원 문의 구글폼
 };
@@ -734,6 +763,21 @@ document.querySelectorAll("[data-link]").forEach(function(a){
     if (note) note.hidden = false;
   }
 });
+/* 모바일 하단 참가 신청 버튼: 다른 참가 신청 버튼이 화면에 없을 때만 보여요 */
+(function(){
+  const fab = document.querySelector(".float-cta");
+  if (!fab || !("IntersectionObserver" in window)) return;
+  const watched = [document.querySelector(".hero-ctas"), document.getElementById("join"), document.querySelector(".footer")].concat(Array.from(document.querySelectorAll(".cta-strip"))).filter(Boolean);
+  const visible = new Set();
+  const io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ e.isIntersecting ? visible.add(e.target) : visible.delete(e.target); });
+    const show = visible.size === 0;
+    fab.classList.toggle("show", show);
+    fab.setAttribute("aria-hidden", show ? "false" : "true");
+    fab.tabIndex = show ? 0 : -1;
+  });
+  watched.forEach(function(el){ io.observe(el); });
+})();
 const toggle = document.querySelector(".nav-toggle");
 const links = document.getElementById("navLinks");
 toggle.addEventListener("click", function(){
