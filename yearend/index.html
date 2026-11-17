@@ -304,6 +304,33 @@ a{color:inherit}
 .footer-links a{text-decoration:none}
 .footer-links a:hover{color:var(--white)}
 
+/* sponsor: audience + small asks */
+.audience{margin-bottom:48px}
+.sub-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px 24px;flex-wrap:wrap;margin-bottom:18px}
+.sub-head h3{font-size:1.2rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+.sub-head p{font-size:.86rem;color:var(--muted)}
+.aud-grid{display:grid;grid-template-columns:repeat(3,1fr) 1.6fr;gap:18px}
+.stat{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:24px 22px;display:flex;flex-direction:column;justify-content:center}
+.stat b{font-size:2.3rem;font-weight:800;color:var(--plum);letter-spacing:-.03em;line-height:1.1}
+.stat span{margin-top:8px;font-size:.92rem;color:var(--muted);line-height:1.45}
+.jobs{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px 22px 18px}
+.jobs-title{font-size:.86rem;font-weight:700;color:var(--ink);margin-bottom:12px}
+.jobs ul{list-style:none;display:grid;gap:9px}
+.jobs li{display:grid;grid-template-columns:7.2em 1fr 2.6em;align-items:center;gap:10px;font-size:.86rem;color:var(--muted)}
+.jobs .track{height:10px;border-radius:0 4px 4px 0;background:transparent}
+.jobs .bar{display:block;height:100%;border-radius:0 4px 4px 0;background:var(--plum)}
+.jobs li.etc .bar{background:rgba(79,61,86,.35)}
+.jobs .pct{text-align:right;color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+.small-asks{margin-top:48px}
+.ask-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.ask-card{background:var(--white);border:1px dashed rgba(79,61,86,.35);border-radius:12px;padding:20px 18px}
+.ask-card b{display:block;font-size:1rem;color:var(--plum);margin-bottom:6px}
+.ask-card span{font-size:.9rem;color:var(--muted);line-height:1.55;display:block}
+.fit{margin-top:18px;font-size:.95rem;color:var(--muted)}
+.fit b{color:var(--ink);font-weight:700;margin-right:6px}
+@media (max-width:920px){.aud-grid{grid-template-columns:1fr 1fr}.jobs{grid-column:1/-1}.ask-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.aud-grid{grid-template-columns:1fr}.ask-grid{grid-template-columns:1fr}.stat b{font-size:2rem}}
+
 /* 참가 신청 CTA */
 .nav-links{margin-left:auto}
 .nav-cta{margin-left:24px;display:inline-flex;align-items:center;height:38px;padding:0 18px;border-radius:999px;background:var(--lilac);color:var(--navy);font-size:.9rem;font-weight:700;text-decoration:none;white-space:nowrap;transition:background .2s}
@@ -643,6 +670,29 @@ a{color:inherit}
 
     <div class="lineage"><b>2017년부터</b><span>6,000명이 함께한 커뮤니티 스여일삶에서 이어진 알리연</span></div>
 
+    <div class="audience">
+      <div class="sub-head">
+        <h3>이런 사람들이 모여요</h3>
+        <p>4월 오프라인 모임 참가자 68명의 신청서 응답 기준</p>
+      </div>
+      <div class="aud-grid">
+        <div class="stat"><b>65%</b><span>경력 6년 차 이상</span></div>
+        <div class="stat"><b>47%</b><span>창업자, 리더, 팀장급</span></div>
+        <div class="stat"><b>66%</b><span>스타트업, 1인 기업 소속</span></div>
+        <div class="jobs" role="figure" aria-label="참가자 직무 분포">
+          <p class="jobs-title">직무 분포</p>
+          <ul>
+          <li title="마케팅·브랜드 19%"><span>마케팅·브랜드</span><span class="track"><span class="bar" style="width:95%"></span></span><span class="pct">19%</span></li>
+          <li title="경영·전략 18%"><span>경영·전략</span><span class="track"><span class="bar" style="width:90%"></span></span><span class="pct">18%</span></li>
+          <li title="프로덕트·기획 15%"><span>프로덕트·기획</span><span class="track"><span class="bar" style="width:75%"></span></span><span class="pct">15%</span></li>
+          <li title="개발·데이터 15%"><span>개발·데이터</span><span class="track"><span class="bar" style="width:75%"></span></span><span class="pct">15%</span></li>
+          <li title="세일즈·사업개발 13%"><span>세일즈·사업개발</span><span class="track"><span class="bar" style="width:65%"></span></span><span class="pct">13%</span></li>
+          <li class="etc" title="인사·디자인 등 20%"><span>인사·디자인 등</span><span class="track"><span class="bar" style="width:100%"></span></span><span class="pct">20%</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <div class="tiers">
       <div class="tier main">
         <div class="tier-en">Main partner</div>
@@ -673,6 +723,20 @@ a{color:inherit}
           <li>행사 후 감사 콘텐츠 크레딧</li>
         </ul>
       </div>
+    </div>
+
+    <div class="small-asks">
+      <div class="sub-head">
+        <h3>작은 후원도 참가자에게 바로 닿아요</h3>
+        <p>현물 후원 예시</p>
+      </div>
+      <div class="ask-grid">
+        <div class="ask-card"><b>다과와 음료</b><span>오후 한나절을 함께하는 100명의 커피와 다과</span></div>
+        <div class="ask-card"><b>굿즈백 아이템</b><span>참가자 100명에게 전달되는 샘플, 노트, 스티커</span></div>
+        <div class="ask-card"><b>클로징 경품</b><span>행사 마지막 추첨으로 전하는 경품 3~5개</span></div>
+        <div class="ask-card"><b>서비스 이용권</b><span>AI 툴, 교육, 커리어 서비스의 쿠폰이나 체험권</span></div>
+      </div>
+      <p class="fit"><b>특히 잘 맞아요</b>AI 툴과 SaaS, 커리어·교육 서비스, HR·채용 플랫폼, 일하는 사람을 위한 라이프스타일 브랜드</p>
     </div>
 
     <div class="ask">
@@ -747,7 +811,7 @@ a{color:inherit}
 const LINKS = {
   apply: "https://forms.gle/z3A3B9m6SsJRHnJe9",   // 참가 신청 구글폼
   host: "https://forms.gle/5gadHg9QgMspvXgy6",     // 주니어 진행자 지원서 구글폼
-  sponsor: "https://forms.gle/QguzeRV7vCwrqwxR6"   // 후원 문의 구글폼
+  sponsor: "https://forms.gle/UkV6t6xJCdZzh9Cp6"   // 후원 문의 구글폼
 };
 document.querySelectorAll("[data-link]").forEach(function(a){
   const url = LINKS[a.dataset.link];
