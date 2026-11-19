@@ -380,6 +380,9 @@ a{color:inherit}
 @media (max-width:920px){.peers{grid-template-columns:1fr;margin-top:48px}}
 @media (max-width:520px){.peers-stats{grid-template-columns:1fr;gap:10px}.peers-stats div{display:flex;align-items:baseline;gap:12px}.peers-stats b{font-size:1.6rem;min-width:2.6em}}
 
+/* About: 인용 박스를 왼쪽 본문 높이의 가운데에 맞춤 */
+.about-grid{align-items:center}
+@media (max-width:920px){.about-grid{align-items:start}}
 .info li.hl .k,.info li.hl .v{color:var(--plum)}
 .info li.hl .v{font-size:1.08rem}
 
@@ -747,7 +750,7 @@ a{color:inherit}
       <h2>이 무대를 함께 만들 후원사를 찾고 있어요</h2>
       <p>현금 후원과 함께 다과, 굿즈, 서비스 이용권 같은 현물 후원도 환영해요. 후원 접수는 11월 30일(월)에 마감돼요.</p>
     </div>
-    <a class="btn btn-outline" href="./sponsor/">후원사로 함께하기</a>
+    <a class="btn btn-outline" href="sponsor.html">후원사로 함께하기</a>
   </div>
 </section>
 
@@ -760,7 +763,7 @@ a{color:inherit}
       <a class="brand" href="https://allyeon.org/">Allyeon</a>
       <div class="footer-links">
         <a href="https://allyeon.org/">알리연 홈</a>
-        <a href="./sponsor/">후원 안내</a>
+        <a href="sponsor.html">후원 안내</a>
         <a href="https://www.linkedin.com/company/142875242" target="_blank" rel="noopener">LinkedIn</a>
         <span>© 2026 Allyeon</span>
       </div>
@@ -773,7 +776,7 @@ a{color:inherit}
 <script>
 /* 폼 링크가 준비되면 여기만 채우면 페이지 전체 버튼이 연결돼요 */
 const LINKS = {
-  apply: "https://forms.gle/z3A3B9m6SsJRHnJe9"    // 참가 신청 구글폼 (후원 문의 폼은 sponsor/index.html에 있어요)
+  apply: "https://forms.gle/z3A3B9m6SsJRHnJe9"    // 참가 신청 구글폼 (후원 문의 폼은 sponsor.html에 있어요)
 };
 /* 신청 마감 D-day: 한국 시간 기준으로 계산하고, 마감이 지나면 D-day 표시를 숨겨요 */
 (function(){
